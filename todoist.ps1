@@ -1,3 +1,20 @@
+<#
+.SYNOPSIS
+Installs or uninstalls Todoist for Windows, with logging and cleanup.
+
+.DESCRIPTION
+This script installs or uninstalls the Todoist desktop app for Windows.  
+- On install, it tries Chocolatey first, then falls back to downloading and running the official installer if needed.  
+- On uninstall, it removes Todoist using Chocolatey (if available), kills running processes, deletes all known files, folders, shortcuts, and registry keys.
+All actions and errors are logged to C:\loggy\todoist.log.
+
+.PARAMETER Uninstall
+If specified, the script will uninstall Todoist and clean up all related files and registry entries.
+
+.NOTES
+Requires administrative privileges for full cleanup and installation.
+#>
+
 param(
     [switch]$Uninstall
 )
