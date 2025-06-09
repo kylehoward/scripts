@@ -1,3 +1,17 @@
+<#
+.SYNOPSIS
+Installs Chocolatey using PowerShell 7, with logging.
+
+.DESCRIPTION
+This script checks for PowerShell 7 and Chocolatey on the system. 
+If PowerShell 7 is present but Chocolatey is not, it installs Chocolatey for all users.
+All actions and errors are logged to C:\loggy\2choco.log.
+If PowerShell 7 is missing, the script prompts the user to run 1powershell.ps1 first.
+
+.NOTES
+Requires administrative privileges to install Chocolatey.
+#>
+
 $logDir = "C:\loggy"
 $logFile = "$logDir\2choco.log"
 
