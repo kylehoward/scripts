@@ -1,3 +1,16 @@
+<#
+.SYNOPSIS
+Checks for and installs PowerShell 7, with logging.
+
+.DESCRIPTION
+This script checks if PowerShell 7 is installed on the system. If it is not found, it attempts to install PowerShell 7 using winget (if available). 
+All actions and errors are logged to C:\loggy\powershell.log. 
+If winget is not available, the script instructs the user to install PowerShell 7 manually.
+
+.NOTES
+Requires administrative privileges to install PowerShell 7.
+#>
+
 $logDir = "C:\loggy"
 $logFile = "$logDir\powershell.log"
 
