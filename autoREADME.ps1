@@ -1,4 +1,19 @@
 # Requires: PowerShell 7+, git CLI
+#
+# This script automatically generates a README.md file documenting all PowerShell scripts (.ps1)
+# tracked by git in the repository. For each script, it attempts to extract the first documentation
+# block (between <# and #>) and includes it in the README. If no documentation block is found,
+# "No Info" is listed for that script.
+#
+# The script then commits and pushes the updated README.md to the remote repository.
+# 
+# How it works:
+# 1. Pulls the latest changes from the remote repository.
+# 2. Uses 'git ls-files' to find all tracked .ps1 files.
+# 3. For each file, reads its content and extracts the first documentation block if present.
+# 4. Builds a Markdown README listing each script and its documentation.
+# 5. Overwrites README.md with the new content.
+# 6. Commits and pushes the README.md to the remote repository.
 
 # Update local repository
 git pull
